@@ -1,0 +1,38 @@
+Category,Description,Dimensions,Quantity,Material,Link,Unit Price (€),Total Price (€)
+Bearings,Ball Bearing,7x19x6,1,Steel,https://www.kugellager-express.de/miniatur-kugellager-607-offen-geoelt-7x19x6-mm,0.86,0.86
+Bearings,Ball Bearing,10x19x5,1,Steel,https://www.kugellager-express.de/rillenkugellager-6800-61800-offen-geoelt-10-19-5-mm,1,1
+Bearings,Ball Bearing,15x24x5,1,Steel,https://www.kugellager-express.de/rillenkugellager-6802-61802-offen-geoelt-15-24-5-mm,1.18,1.18
+Bearings,Ball Bearing,17x26x5,1,Steel,https://www.kugellager-express.de/rillenkugellager-6803-61803-offen-geoelt-17-26-5-mm,1.27,1.27
+Bearings,Ball Bearing ZZ,17x26x5,1,Steel,https://www.kugellager-express.de/rillenkugellager-6803-61803-ZZ-17x26x5-mm,1.18,1.18
+Bearings,Ball Bearing ZZ,30x42x7,1,Steel,https://www.kugellager-express.de/rillenkugellager-6806-61806-ZZ-30x42x7-mm,2.61,2.61
+Bearings,Ball Bearing ZZ,35x44x5,1,Steel,https://www.kugellager-express.de/rillenkugellager-6707-61707-ZZ-35x44x5-mm,5.66,5.66
+Screws,Socket Head Cap Screw DIN 912,M2x4,2,Steel,,,
+Screws,Socket Head Cap Screw DIN 912,M3x4,2,Steel,,,
+Screws,Socket Head Cap Screw DIN 912,M3x10,4,Steel,,,
+Screws,Socket Head Cap Screw DIN 912,M3x12,1,Steel,,,
+Screws,Socket Head Cap Screw DIN 912,M3x16,3,Steel,,,
+Screws,Socket Head Cap Screw DIN 912,M3x25,4,Steel,,,
+Pins & Bushings,Stainless Steel Dowel Pin,6x30,16,Steel,https://de.aliexpress.com/item/32994193630.html,0.152,2.43
+Pins & Bushings,Stainless Steel Dowel Pin,4x18,6,Steel,https://de.aliexpress.com/item/32993769276.html,0.063,0.38
+Pins & Bushings,Bushing,M6x8x20,16,Steel,https://de.aliexpress.com/item/1005004320890614.html,0.169,2.70
+Pins & Bushings,Bushing,M4x6x10,6,Steel,https://de.aliexpress.com/item/1005004320890614.html,,
+3D Printed Parts,3mm Shaft Adapter,,1,Nylon 12 Tough (Formlabs Fuse 1),,0,0
+3D Printed Parts,Drive Shell,,1,Nylon 12 Tough (Formlabs Fuse 1),,0,0
+3D Printed Parts,Drive Top Cover,,1,Nylon 12 Tough (Formlabs Fuse 1),,0,0
+3D Printed Parts,Encoder Mounting Plate,,1,Nylon 12 Tough (Formlabs Fuse 1),,0,0
+3D Printed Parts,Input Shaft,,1,Nylon 12 Tough (Formlabs Fuse 1),,0,0
+3D Printed Parts,Lower Output Shaft,,1,Nylon 12 Tough (Formlabs Fuse 1),,0,0
+3D Printed Parts,Staple Spacer,,1,Nylon 12 Tough (Formlabs Fuse 1),,0,0
+3D Printed Parts,Upper Output Shaft,,1,Nylon 12 Tough (Formlabs Fuse 1),,0,0
+3D Printed Parts,Spring Contact Bracket,,1,Nylon 12 Tough (Formlabs Fuse 1),,9.23,9.23
+Machined Parts,Cycloidal Disk,,1,Nylon 6,https://smapla-shop.de/pa-6-polyamid-zuschnitte.html?number=PA-S-10,2.5,2.5
+Machined Parts,Rotor,,1,Aluminum 5083,https://www.aluminium-online-shop.de/produkt-kategorie/aluminium-platten-aluminium-bleche/feingefraeste-gussplatten,8.4,8.4
+Machined Parts,Shell,,1,Aluminum 5083,https://www.aluminium-online-shop.de/produkt-kategorie/aluminium-platten-aluminium-bleche/feingefraeste-gussplatten,8.56,8.56
+Motor Components,Magnet Ring,,1,—,https://faradyi.en.alibaba.com,0,0
+Motor Components,Stator,,1,—,https://faradyi.en.alibaba.com,21.93,21.93
+Electronics,Same Sky CUI Devices AMT102-D2048-I5000-S Encoder,,1,—,https://www.digikey.de/de/products/detail/same-sky-formerly-cui-devices/AMT102-D2048-I5000-S/18661890,22,22
+Electronics,Hall Encoder,,1,—,,10,10
+Electronics,Magnet 18x5,,1,—,https://www.magnet-shop.net/neodym-magnete/scheibenmagnete/scheibenmagnet-18.0-x-5.0-mm-n35-nickel-diametral,1.87,1.87
+,,,,,,,
+,,,,,,Total:,110.76
+,,,,,,,

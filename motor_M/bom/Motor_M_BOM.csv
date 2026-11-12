@@ -1,0 +1,37 @@
+Category,Description,Dimensions,Quantity,Material,Link,Unit Price (€),Total Price (€)
+Bearings,Ball Bearing,30x37x4 mm,2,Steel,https://www.kugellager-express.de/rillenkugellager-6706-61706-offen-geoelt-30-37-4-mm,5.05,10.10
+Bearings,Ball Bearing,35x47x7 mm,2,Steel,https://www.kugellager-express.de/rillenkugellager-6807-61807-offen-geoelt-35-47-7-mm,3.12,6.24
+Bearings,Ball Bearing,45x58x7 mm,1,Steel,https://www.kugellager-express.de/rillenkugellager-6809-61809-offen-geoelt-45-58-7-mm,4.65,4.65
+Bearings,Ball Bearing ZZ,35x47x7 mm,1,Steel,https://www.kugellager-express.de/rillenkugellager-6807-61807-ZZ-35x47x7-mm,2.95,2.95
+Bearings,Ball Bearing ZZ,50x65x7 mm,1,Steel,https://www.kugellager-express.de/rillenkugellager-6810-61810-ZZ-50x65x7-mm,4.77,4.77
+Bearings,Flanged Ball Bearing ZZ,6x10x2.5 mm (flange 11.2x0.6 mm),1,Steel,https://www.kugellager-express.de/miniatur-flanschkugellager-mf-106-ZZ-6x10x3-mm,2.17,2.17
+Screws,Socket Head Cap Screw DIN 912,M3x6,2,Steel,,,
+Screws,Socket Head Cap Screw DIN 912,M3x10,4,Steel,,,
+Screws,Socket Head Cap Screw DIN 912,M3x16,3,Steel,,,
+Screws,Socket Head Cap Screw DIN 912,M3x30,4,Steel,,,
+Screws,Countersunk Socket Head Screw DIN 7991,M3x8,3,Steel,,,
+Pins & Bushings,Stainless Steel Dowel Pin,M6x12,1,Steel,https://de.aliexpress.com/item/32994193630.html,0.09,0.09
+Pins & Bushings,Stainless Steel Dowel Pin,M6x18,6,Steel,https://de.aliexpress.com/item/32994193630.html,0.106,0.64
+Pins & Bushings,Stainless Steel Dowel Pin,M6x30,20,Steel,https://de.aliexpress.com/item/32994193630.html,0.152,3.04
+Pins & Bushings,Bushing,M6x8x20,20,Steel,https://de.aliexpress.com/item/1005004320890614.html,0.169,3.38
+Pins & Bushings,Bushing,M6x8x10,6,Steel,https://de.aliexpress.com/item/1005004320890614.html,0.179,1.07
+3D Printed Parts,Drive Shell,,1,Nylon 12 Tough (Formlabs Fuse 1),https://github.com/Robotik-Club-Berlin/motor_M/blob/main/drive/driveShell%20v16.3mf,0,0
+3D Printed Parts,Drive Top Cover,,1,Nylon 12 Tough (Formlabs Fuse 1),https://github.com/Robotik-Club-Berlin/motor_M/blob/main/drive/driveTopCover%20v6.3mf,0,0
+3D Printed Parts,Encoder Mounting Plate,,1,Nylon 12 Tough (Formlabs Fuse 1),https://github.com/Robotik-Club-Berlin/motor_M/blob/main/BLDC/encoderMountinPlate%20v2.3mf,0,0
+3D Printed Parts,Input Shaft,,1,Nylon 12 Tough (Formlabs Fuse 1),https://github.com/Robotik-Club-Berlin/motor_M/blob/main/drive/inputShaft%20v12.3mf,0,0
+3D Printed Parts,Lower Output Shaft,,1,Nylon 12 Tough (Formlabs Fuse 1),https://github.com/Robotik-Club-Berlin/motor_M/blob/main/drive/lowerOutputShaft%20v5.3mf,0,0
+3D Printed Parts,Staple Spacer,,1,Nylon 12 Tough (Formlabs Fuse 1),https://github.com/Robotik-Club-Berlin/motor_M/blob/main/drive/stapleSpacer%20v3.3mf,0,0
+3D Printed Parts,t25 Encoder Coupler,,1,Nylon 12 Tough (Formlabs Fuse 1),https://github.com/Robotik-Club-Berlin/motor_M/blob/main/BLDC/t25EncoderCoupler%20v6.3mf,0,0
+3D Printed Parts,t50 Gear,,1,Nylon 12 Tough (Formlabs Fuse 1),https://github.com/Robotik-Club-Berlin/motor_M/blob/main/BLDC/t50Gear_a%20v2.3mf,0,0
+3D Printed Parts,Upper Output Shaft,,1,Nylon 12 Tough (Formlabs Fuse 1),https://github.com/Robotik-Club-Berlin/motor_M/blob/main/drive/upperOutputShaft%20v6.3mf,0,0
+3D Printed Parts,Spring Contact Bracket,,1,Nylon 12 Tough (Formlabs Fuse 1),https://github.com/Robotik-Club-Berlin/motor_M/blob/main/springContactBracket%20v3.3mf,21.65,21.65
+Machined Parts,Cycloidal Disk (19 Lobes),,1,Nylon 6,https://smapla-shop.de/pa-6-polyamid-zuschnitte.html?number=PA-S-10,2.5,2.5
+Machined Parts,Rotor,,1,Aluminum 5083,https://www.aluminium-online-shop.de/produkt-kategorie/aluminium-platten-aluminium-bleche/feingefraeste-gussplatten,11,11
+Machined Parts,Shell,,1,Aluminum 5083,https://www.aluminium-online-shop.de/produkt-kategorie/aluminium-platten-aluminium-bleche/feingefraeste-gussplatten,12,12
+Motor Components,Magnet Ring (T-Motor 8115 Frameless BLDC),,1,—,https://faradyi.en.alibaba.com,0,0
+Motor Components,Stator (T-Motor 8115 Frameless BLDC),,1,—,https://faradyi.en.alibaba.com,37.60,37.60
+Electronics,Same Sky CUI Devices AMT102-D2048-I5000-S Encoder,,1,—,https://www.digikey.de/de/products/detail/same-sky-formerly-cui-devices/AMT102-D2048-I5000-S/18661890,22,22
+Electronics,Hall Encoder,,1,—,,10,10
+Electronics,Magnet 25x40x5,,1,—,https://www.magnet-shop.net/neodym-magnete/ringmagnete/ringmagnet-40.0-x-25.0-x-5.0-mm-n42-nickel-diametral,8.48,8.48
+,,,,,,,
+,,,,,,Total:,179.7
