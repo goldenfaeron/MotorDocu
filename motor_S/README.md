@@ -7,7 +7,7 @@ Related: [Cycloidal Drive](../docs/cycloidal-drive.md)
 
 ### Cycloidal drive
 
-See [Cycloidal Drive](../docs/cycloidal-drive.md) for the full explanation of all calculations. The `scripts` folder in the main workspace contains a Python script that does most of the calculations for you.
+See [Cycloidal Drive](../docs/cycloidal-drive.md) for the full explanation of all calculations. [`scripts/cycloidal_disk_analysis.py`](../scripts/cycloidal_disk_analysis.py) does most of the calculations for you (edit its input parameters for this motor's geometry before running).
 
 #### Validation list
 
