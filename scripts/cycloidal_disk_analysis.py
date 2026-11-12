@@ -18,14 +18,19 @@ N_p = N_l + 1       # number of pins in outer ring (usually N_l + 1)
 
 # Geometry [mm]
 R_p       = 50.0    # Ring pin circle radius
-R_r       = 4.0     # pin radius (ring gear pins) -- per doc's profile formula, not the 5.0mm table value
+R_r       = 5.0     # pin radius (ring gear pins) -- table value
 b_contact = 20.0    # pin contact length (axial / effective) -- assumed = disk height h_disk, not separately documented
 e         = 2.25     # eccentricity [mm]
 R_hole    = R_r + e # hole radius in cycloidal disk (must be > R_pin)
 
 # Output shaft pins
-N_out  = 8          # number of output shaft pins
-R_out  = 30.0       # output shaft pin circle radius [mm]
+# Mechanism: oversized holes in the disk, pins fixed to the output shaft,
+# hole oversize tied to eccentricity e -- same convex-concave contact as the
+# ring pins, just on the output side.
+N_out       = 8       # number of output shaft pins
+R_out       = 30.0    # output shaft pin circle radius [mm] (lever arm, used in F_out_max)
+R_out_pin   = 4.0     # physical radius of the output shaft pins themselves [mm]
+R_hole_out  = R_out_pin + e   # oversized disk hole radius for the output pin
 
 # Load
 T_out = 60000.0     # output torque [N·mm]  (60 Nm)
@@ -63,7 +68,10 @@ nu_pin = 0.30
 
 MATERIALS = [
     # name,                          E [MPa],  nu,   σ_y [MPa], UTS [MPa], polymer?
-    ("Steel (pin ref.)",             210_000,  0.30,  1000,       None,     False),
+    ("Steel (pin ref., ~hardened)",  210_000,  0.30,  1000,       None,     False),
+    ("Stainless 303/304 (annealed)", 193_000,  0.29,   215,        550,     False),
+    ("Mild steel S235JR",            210_000,  0.30,   235,        360,     False),
+    ("42CrMo4 Q&T (~900 HB-ish)",     210_000,  0.30,   900,       1100,     False),
     ("Nylon 12 Tough (SLS)",           1_450,  0.40,  None,         42,     True ),
     ("Cast PA6 (dry)",                 3_000,  0.39,    65,       None,     True ),
     ("Cast PA6 (humid)",               1_000,  0.39,    45,       None,     True ),
@@ -111,7 +119,8 @@ F_out_max  = (4 * T_out) / (N_out * R_out)
 F_bearing  = K_bearing * T_out / (i * e)
 
 # --- Equivalent radius (convex pin in concave hole) ---
-R_eq = (R_r * R_hole) / (R_hole - R_r)
+R_eq     = (R_r * R_hole) / (R_hole - R_r)               # ring pin <-> disk hole
+R_eq_out = (R_out_pin * R_hole_out) / (R_hole_out - R_out_pin)  # output pin <-> disk hole
 
 # --- Efficiencies ---
 eta_fwd  = forward_efficiency(alpha, mu)
@@ -150,18 +159,18 @@ print(f"  Max output pin force   F_out_max  = {F_out_max:.1f} N")
 print(f"  Eccentric bearing load F_bearing  = {F_bearing:.1f} N  (K={K_bearing})")
 
 print(f"\n{'HERTZIAN GEOMETRY':}")
-print(f"  R_pin   = {R_r:.2f} mm,  R_hole  = {R_hole:.2f} mm")
-print(f"  R_eq    = {R_eq:.3f} mm")
+print(f"  Ring pin:   R_pin = {R_r:.2f} mm,  R_hole = {R_hole:.2f} mm,  R_eq = {R_eq:.3f} mm")
+print(f"  Output pin: R_pin = {R_out_pin:.2f} mm,  R_hole = {R_hole_out:.2f} mm,  R_eq = {R_eq_out:.3f} mm  (F_out_max = {F_out_max:.1f} N)")
 print(f"  b       = {b_contact:.1f} mm  (contact length)")
 print(f"  Load    = {LOAD_TYPE}  → allowable multiplier = {hertz_factor}×σ_y")
 
 print(f"\n{SEP}")
-print(f"  MATERIAL EVALUATION  (disk holes, paired with steel pin)")
-print(f"  Force on ring pins: F = {F_pin_max:.1f} N")
+print(f"  MATERIAL EVALUATION  (disk, paired with steel pins)")
+print(f"  Ring pin force F_pin_max = {F_pin_max:.1f} N   Output pin force F_out_max = {F_out_max:.1f} N")
 print(SEP)
 
 header = (
-    f"  {'Material':<30} {'E* [MPa]':>10} {'p_p_max [MPa]':>12} {'p_out_max [MPa]':>12} "
+    f"  {'Material':<30} {'E* [MPa]':>10} {'p_p_max [MPa]':>12} {'p_p_max,eq [MPa]':>14} {'p_output [MPa]':>13} "
     f"{'p_max [MPa]':>12} {'Allow. [MPa]':>14} {'Status':>8}"
 )
 print(header)
@@ -169,9 +178,16 @@ print(f"  {sep}")
 
 for name, E2, nu2, sig_y, UTS, is_polymer in MATERIALS:
     E_star = effective_modulus(E_pin, nu_pin, E2, nu2)
-    p_out_max  = hertz_line_pressure(F_pin_max, E_star, R_eq, b_contact)
-    p_p_max  = hertz_line_pressure(F_pin_max, E_star, R_r, b_contact)
-    p_max = max(p_out_max, p_p_max)
+    # Ring pin <-> disk hole, conservative (flat) idealization -- matches the
+    # original doc's "p_p,max"
+    p_p_max      = hertz_line_pressure(F_pin_max, E_star, R_r, b_contact)
+    # Ring pin <-> disk hole, concave-corrected idealization -- this is what the
+    # original script/doc actually computed as "p_out,max"; it's still the RING
+    # pin, just a more generous estimate crediting the hole's concave curvature.
+    p_p_max_eq   = hertz_line_pressure(F_pin_max, E_star, R_eq, b_contact)
+    # Genuinely separate output pin <-> disk hole contact (new; wasn't modeled before)
+    p_output_pin = hertz_line_pressure(F_out_max, E_star, R_eq_out, b_contact)
+    p_max = max(p_p_max, p_output_pin)  # p_p_max_eq is never the worst case (R_eq > R_r always)
 
     # Determine allowable
     if sig_y is not None and UTS is not None:
@@ -201,7 +217,7 @@ for name, E2, nu2, sig_y, UTS, is_polymer in MATERIALS:
         flag   = " !!"
 
     print(
-        f"  {name:<30} {E_star:>10.0f} {p_p_max:>12.1f} {p_out_max:>16.1f} "
+        f"  {name:<30} {E_star:>10.0f} {p_p_max:>12.1f} {p_p_max_eq:>14.1f} {p_output_pin:>13.1f} "
         f"{p_max:>12.1f} {hertz_allow:>14.1f} {status:>8}{flag}"
     )
     # print(
@@ -213,7 +229,8 @@ print(SEP)
 print(f"\nNotes:")
 print(f"  • E* computed as E_pin={E_pin/1000:.0f} GPa (steel) paired with disk material.")
 print(f"  • Hertz allowable = {hertz_factor} × reference strength ({LOAD_TYPE} load).")
-print(f"  • p_max uses F_pin_max (most conservative ring-pin load).")
+print(f"  • p_p_max (flat) and p_p_max,eq (concave-corrected) are both the RING pin, using F_pin_max; p_p_max,eq matches the original doc's 'p_out,max' label.")
+print(f"  • p_output is the genuinely separate OUTPUT pin <-> disk-hole contact, using F_out_max and R_eq_out. p_max is the worse of p_p_max and p_output.")
 print(f"  • Polymers: creep and temperature effects NOT captured here.")
 print(f"  • Bearing load F_bearing = {F_bearing:.1f} N → check bearing datasheet separately.")
 print()
