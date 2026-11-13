@@ -1,6 +1,7 @@
 # Motors
 
-CAD and documentation for the three cycloidal-drive BLDC actuators used across the robot: **L**, **M**, and **S**. Each actuator pairs a frameless BLDC stator/rotor with a single-stage cycloidal reduction.
+CAD and documentation for the three cycloidal-drive BLDC actuators that can be used across a whole robot: **L**, **M**, and **S**. Each actuator pairs a frameless BLDC stator/rotor with a single-stage cycloidal reduction.
+Each actuator has a gear reduction of less that 20:10 which makes them backdrivable. This property can be used to sense external loads by measuring rising motor currents. Also it reduces the reflected inertia which makes the actuators safer to use for HRI (human robot interaction) than Actuators that achieve the same output torques by using higher gear ratios.
 
 | Motor | Target ratio | Nominal output torque |
 | ----- | ------------- | ----------------------- |
@@ -33,8 +34,6 @@ motors/
                                      project's designs to STEP + 3MF
 ```
 
-CAD was last refreshed from a full-project Fusion 360 export; only the three actuator subtrees were kept (CNC-shop-specific exports, a torque test rig, an unrelated CNC router project, and loose electronics duplicates already covered by the separate `electronics/hall_encoder` repo were all excluded). Each motor's README flags any unresolved part-revision ambiguity found during that sort (e.g. duplicate exports with unclear current-ness) — check there before using CAD for manufacturing.
-
 ## License
 
-Hardware (CAD, BOMs) is licensed under [CERN-OHL-S v2](LICENSE). Documentation is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Everything in this repository (CAD, BOMs, and documentation) is licensed under [CC BY-NC-SA 4.0](LICENSE) ([summary](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
