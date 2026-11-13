@@ -31,7 +31,7 @@ import traceback
 # =============================================================================
 # CONFIGURE
 # =============================================================================
-PROJECT_NAME = 'Motors'          # must match the Fusion Data Panel project name exactly
+PROJECT_NAME = 'StuR'          # must match the Fusion Data Panel project name exactly
 EXPORT_STEP = True
 EXPORT_3MF = True
 DESIGN_EXTENSIONS = ('f3d', 'f3z')

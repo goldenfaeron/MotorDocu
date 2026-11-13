@@ -15,10 +15,16 @@ Shared background on the cycloidal reduction stage (transmission ratio, pressure
 ```
 motors/
 ├── docs/                 shared theory (cycloidal drive math)
+├── assembly/
+│   └── Actuators.step    combined STEP assembly of all three actuators
 ├── motor_L/
 │   ├── README.md         dimensions, requirements, materials, derived parameters
 │   ├── bom/              bill of materials (CSV)
-│   └── cad/              3MF source files (BLDC + drive stage)
+│   └── cad/
+│       ├── step/         parametric STEP export (assembly, BLDC, drive)
+│       ├── BLDC/         3MF print-ready meshes
+│       ├── drive/        3MF print-ready meshes
+│       └── springContactBracket.3mf
 ├── motor_M/              same structure as motor_L
 ├── motor_S/              same structure as motor_L
 └── scripts/
@@ -26,6 +32,8 @@ motors/
     └── MassExportProject.py        Fusion 360 script: batch-export a whole
                                      project's designs to STEP + 3MF
 ```
+
+CAD was last refreshed from a full-project Fusion 360 export; only the three actuator subtrees were kept (CNC-shop-specific exports, a torque test rig, an unrelated CNC router project, and loose electronics duplicates already covered by the separate `electronics/hall_encoder` repo were all excluded). Each motor's README flags any unresolved part-revision ambiguity found during that sort (e.g. duplicate exports with unclear current-ness) — check there before using CAD for manufacturing.
 
 ## License
 

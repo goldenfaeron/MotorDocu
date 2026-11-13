@@ -105,4 +105,7 @@ See [`bom/Motor_L_BOM.csv`](bom/Motor_L_BOM.csv).
 
 ## CAD
 
-STEP/3MF source files are under [`cad/`](cad).
+- [`cad/step/`](cad/step) — parametric STEP export from Fusion 360 (full assembly, BLDC and drive components, purchased parts).
+- [`cad/BLDC/`](cad/BLDC), [`cad/drive/`](cad/drive), [`cad/springContactBracket.3mf`](cad/springContactBracket.3mf) — existing 3MF print-ready meshes (unchanged by this refresh).
+
+> **Unresolved revision ambiguity:** `cad/step/BLDC/` contains both `Shell.step` and `Shell_Updated.step`. Which one is current wasn't confirmed — both are kept rather than guessing; check with whoever did the latest shell revision before using either for manufacturing.

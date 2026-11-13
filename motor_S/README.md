@@ -68,4 +68,9 @@ See [`bom/Motor_S_BOM.csv`](bom/Motor_S_BOM.csv).
 
 ## CAD
 
-STEP/3MF source files are under [`cad/`](cad).
+- [`cad/step/`](cad/step) — parametric STEP export from Fusion 360 (full assembly, BLDC and drive components, purchased parts).
+- [`cad/BLDC/`](cad/BLDC), [`cad/drive/`](cad/drive), [`cad/springContactBracket.3mf`](cad/springContactBracket.3mf) — existing 3MF print-ready meshes (unchanged by this refresh).
+
+> **Unresolved variants, not deduplicated — don't assume which is current:**
+> - `cad/step/drive/` has two cycloidal disk exports: `cycloidalDisk.step` and `cycloidalDisk_S_6und4mmPins.step` (the latter name suggests a 6mm/4mm mixed pin-radius variant — matches this doc's $R_r = 4; 3$mm note, but not confirmed as the as-built version).
+> - `cad/step/` has two spring contact bracket exports: `springContactBracket.step` and `springContactBracketFDM.step`.
