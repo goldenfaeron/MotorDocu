@@ -20,7 +20,11 @@ motors/
 │   ├── bom/              bill of materials (CSV)
 │   └── cad/              3MF source files (BLDC + drive stage)
 ├── motor_M/              same structure as motor_L
-└── motor_S/              same structure as motor_L
+├── motor_S/              same structure as motor_L
+└── scripts/
+    ├── cycloidal_disk_analysis.py  pin/disk Hertz-contact and force analysis
+    └── MassExportProject.py        Fusion 360 script: batch-export a whole
+                                     project's designs to STEP + 3MF
 ```
 
 ## License
